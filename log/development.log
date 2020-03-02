@@ -40,3 +40,122 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+Started GET "/students/new" for ::1 at 2020-03-02 12:45:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/students/new"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.2) lib/rack/handler/webrick.rb:95:in `service'
+/Users/jswisher/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/jswisher/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/jswisher/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered collection of /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (1.9ms)
+  Rendered /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.6ms)
+  Rendering /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.5ms)
+  Rendered /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.7ms)
+Started GET "/posts/new" for ::1 at 2020-03-02 12:45:46 -0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 299ms (Views: 293.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2020-03-02 12:45:52 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RXG34pUK6HOY/Yiwb5HZf2LrFZCSuQOtYDzet0zoR6dG5fVU3aVAFgmcR7boy2Gcy09ag+UHo8iArDonmWrFjA==", "title"=>"Testing", "description"=>"Testing\r\n", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-03-02 19:45:52.815856"], ["updated_at", "2020-03-02 19:45:52.815856"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/2" for ::1 at 2020-03-02 12:45:52 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/posts/new" for ::1 at 2020-03-02 12:47:44 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 193ms (Views: 183.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-03-02 12:47:45 -0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-03-02 12:48:00 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/YxP0M7KXtTri2dJkA6KSwC5jnC+TMkOuAY7pWYJVuP+GA1mhmX2sXrqqE8XVDKoqR3BY8nyaWtYlt81s4vUyA==", "title"=>"Hello ", "description"=>"World", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-03-02 19:48:00.307605"], ["updated_at", "2020-03-02 19:48:00.307605"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/3" for ::1 at 2020-03-02 12:48:00 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started POST "/posts" for ::1 at 2020-03-02 12:48:33 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/YxP0M7KXtTri2dJkA6KSwC5jnC+TMkOuAY7pWYJVuP+GA1mhmX2sXrqqE8XVDKoqR3BY8nyaWtYlt81s4vUyA==", "title"=>"Hello ", "description"=>"World", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-03-02 19:48:33.690804"], ["updated_at", "2020-03-02 19:48:33.690804"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x00007ffb35755868>
+Did you mean?  try):
+  
+app/controllers/posts_controller.rb:17:in `create'
+  Rendering /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jswisher/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.1ms)
