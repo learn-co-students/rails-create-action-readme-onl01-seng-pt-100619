@@ -69,3 +69,4 @@ No template found for PostsController#create, rendering head :no_content
 Completed 204 No Content in 33ms (ActiveRecord: 2.4ms)
 
 
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
